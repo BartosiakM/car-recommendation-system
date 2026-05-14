@@ -1,0 +1,238 @@
+.recommendations-page {
+  min-height: 100vh;
+  background: #121212;
+  padding: 2rem 1rem;
+}
+
+.recommendations-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.recommendations-header {
+  margin-bottom: 3rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a0a0a0;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn:hover {
+  color: #ffffff;
+}
+
+.back-icon {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover .back-icon {
+  transform: translateX(-4px);
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+}
+
+.spinner {
+  width: 4rem;
+  height: 4rem;
+  border: 4px solid #3a3a3a;
+  border-top-color: #5a5a5a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: #a0a0a0;
+  font-size: 1.125rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  justify-items: center;
+}
+
+
+.vehicle-card {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.vehicle-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  transform: translateY(-4px);
+  border-color: #5a5a5a;
+}
+
+.ranking-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #5a5a5a;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.vehicle-image-container {
+  height: 18rem;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: brightness(0.9);
+}
+
+.vehicle-card:hover .vehicle-image {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.vehicle-content {
+  padding: 1.5rem;
+}
+
+.match-percentage {
+  margin-bottom: 1rem;
+}
+
+.match-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: #3a3a3a;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.match-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  border-radius: 1rem;
+  transition: width 1s ease;
+}
+
+.match-text {
+  font-size: 0.875rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.vehicle-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #5a5a5a;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: #6a6a6a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.view-details-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .recommendations-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .vehicle-name {
+    font-size: 1.1rem;
+    min-height: 50px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
